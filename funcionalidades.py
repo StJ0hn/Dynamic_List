@@ -2,7 +2,7 @@
 def cabeçalho():
     print(
     '''
-          LISTA DINÂMICA
+                   LISTA DINÂMICA
     =================================================
                        \033[1;34mList.sys\033[m
     =================================================
@@ -18,7 +18,7 @@ lista_de_compras = []
 def adicionar_item():
     global elemento
     try:
-        elemento = str(input("Qual elemento deseja adicionar? ")).upper()
+        elemento = str(input("Qual item você deseja adicionar? ")).upper()
         lista_de_compras.append(elemento)
         print(f'O item {elemento} adicionado à lista com \033[1;32mSUCESSO\033[m.')
     except:
@@ -27,12 +27,13 @@ def adicionar_item():
 
 #Função para remover itens da lista:
 def remover_item():
-    remover = elemento
+    global lista_de_compras
     try:
-        remover = str(input('Qual item você deseja remover da lista? '))
-        lista_de_compras[:].remove(remover)
-    except:
-        if elemento not in lista_de_compras[:]:
-            print('item não encontrado')
+        item_remover = str(input('Qual item você deseja remover da lista? ')).upper()
+        if item_remover in lista_de_compras:
+            lista_de_compras = [item for item in lista_de_compras if item != item_remover]
+            print(f'O item {item_remover} foi removido da lista com \033[1;32mSUCESSO\033[m.')
         else:
-            print('o item não foi removido, tente novamente.')
+            print('Item não encontrado na lista.')
+    except Exception as e:
+        print(f'Erro ao remover o item da lista: {str(e)}')

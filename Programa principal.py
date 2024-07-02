@@ -12,7 +12,6 @@ while True:
             print(lista_de_compras)
         elif ação == 2:
             remover_item()
-            print(lista_de_compras)
         elif ação == 4:
             print(f"Obrigado por usar o \033[1;34mList.sys\033[m, volte sempre!! {emoji_sorridente}")
             break
