@@ -37,3 +37,12 @@ def remover_item():
             print('Item não encontrado na lista.')
     except Exception as e:
         print(f'Erro ao remover o item da lista: {str(e)}')
+    
+
+#Função para mostrar a lista atualizada: 
+def mostrar_lista():
+    print(
+    '''
+    \033[1;36mSua lista atualizada:\033[m {}      
+    '''
+    .format(lista_de_compras), end='')
